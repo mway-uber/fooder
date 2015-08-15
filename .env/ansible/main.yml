@@ -1,0 +1,22 @@
+---
+- hosts: all
+  sudo: true
+
+  vars_files:
+    - vars/nginx.yml
+    - vars/fooder.yml
+
+  roles:
+    - { role: dist/rhel/epel, tags: ['epel', 'repo'] }
+    - { role: dist/rhel/python, tags: ['python'] }
+    - { role: dist/rhel/mysqld, tags: ['database', 'db', 'mysql'] }
+    - { role: dist/rhel/nginx, tags: ['web', 'http', 'nginx'] }
+
+  pre_tasks:
+    - { include: tasks/bootstrap.yml, tags: ['bootstrap'] }
+
+  tasks:
+    - { include: tasks/fooder.yml, tags: ['fooder', 'app'] }
+
+  handlers:
+    - include: handlers/fooder.yml

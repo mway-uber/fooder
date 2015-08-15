@@ -1,0 +1,25 @@
+# Virtualenv
+.Python
+[Bb]in
+[Ii]nclude
+[Ll]ib
+[Ss]cripts
+pyvenv.cfg
+pip-selfcheck.json
+
+# Python
+*.pyc
+
+# General
+._*
+.DS_Store
+.vagrant-*
+*.0
+*.1
+*.bak
+*.local
+*.log
+*.new
+*.old
+log/
+tmp/

@@ -1,0 +1,23 @@
+---
+- name: fooder.initd
+  template:
+    src: templates/init.d/fooder.sh
+    dest: /etc/init.d/fooder
+    mode: 0755
+  notify:
+    - fooder.restart
+
+- name: fooder.pip
+  pip:
+    requirements: requirements.txt
+    virtualenv: '{{ fooder_app_path }}'
+    chdir: '{{ fooder_app_path }}'
+  notify:
+    - fooder.restart
+
+- name: fooder.nginx
+  template:
+    src: '{{ nginx_confd_src }}/fooder.conf'
+    dest: '{{ nginx_confd }}/fooder.conf'
+  notify:
+    - nginx.restart

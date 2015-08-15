@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>Fooder!</title>
+    <link type="text/css" rel="stylesheet" href="/css/lib/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="/css/lib/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="http://openlayers.org/en/v3.8.2/css/ol.css" type="text/css">
+    <link type="text/css" rel="stylesheet" href="/css/fooder.css" />
+  </head>
+  <body>
+    <div id="page">
+      <!-- <div id="currentLocation" class="hidden">
+        <span class="field street hidden">Beverly Road</span>
+        <span class="field city hidden">Pittsburgh</span>
+        <span class="field state hidden">PA</span>
+        <span class="field postal hidden">15216</span>
+      </div> -->
+
+      <div id="search" class="centered hidden">
+        <div class="input-group input-group-xlg">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span></span>
+          <input id="searchInput" type="text" class="form-control" placeholder="Where are you?" autocomplete="off">
+        </div>
+      </div>
+
+      <div id="splash" class="hidden">
+        <div class="jumbotron centered">
+          <div class="container well">
+            <h1>Welcome to Fooder!</h1>
+            <p>
+              Fooder is an incredibly simple service that will help you find food trucks in San Francisco.
+              It's (mostly) automatic if you allow access to your location; if you can't (or won't!), just
+              search instead.
+            </p>
+            <p><mark>Usage: type in the box. Toggle with <kbd>ESC</kbd>.</mark></p>
+            <p>
+              <strong>Important note:</strong><br />
+              Autodetection only works if you are <em>currently in San Francisco</em>!
+              Otherwise, use the available search box to narrow your search and peruse the beautiful
+              map service from <a href="http://www.openstreetmap.org/" target="_blank">openstreetmap.org</a>.
+            </p>
+            <p><a class="btn btn-primary btn-l" href="#" role="button">Let's go!</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div id="mapContainer">
+        <div id="map"></div>
+      </div>
+
+      <div id="dither" class="hidden"></div>
+    </div>
+
+    <!-- <div id="map"></div>
+    <div id="splash">
+      <div class="jumbotron">
+        <div class="container well">
+          <h1>Hello, world!</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+        </div>
+      </div>
+    </div> -->
+    <script src="/js/lib/bluebird.min.js" charset="utf-8"></script>
+    <script src="/js/lib/modernizr.min.js" charset="utf-8"></script>
+    <script src="/js/lib/jquery.min.js" charset="utf-8"></script>
+    <script src="/js/lib/jquery.easing.min.js" charset="utf-8"></script>
+    <script src="/js/lib/bootstrap.min.js" charset="utf-8"></script>
+    <!-- <script src="/js/lib/bootstrap.typeahead.min.js" charset="utf-8"></script> -->
+    <script src="/js/lib/typeahead.bundle.min.js" charset="utf-8"></script>
+    <script src="/js/lib/ol.min.js" charset="utf-8"></script>
+    <script src="/js/lib/lodash.min.js" charset="utf-8"></script>
+    <script src="/js/fooder.js" charset="utf-8"></script>
+  </body>
+</html>

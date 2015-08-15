@@ -1,0 +1,2 @@
+---
+nginx_confd_src: templates/nginx/conf.d

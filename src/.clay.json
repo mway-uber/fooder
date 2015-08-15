@@ -1,0 +1,42 @@
+{
+  "debug": {
+    "enabled": true,
+    "server": {
+      "host": "127.0.0.1",
+      "port": 8080
+    }
+  },
+  "views": ["fooder"],
+
+  "fooder": {
+    "db": {
+      "mysql": {
+        "connections": {
+          "default": {
+            "database": "uberapp"
+          }
+        }
+      }
+    },
+    "ext": {
+      "opensf": {
+        "token": "Yyfc6NgUGUVmSxj5hrIaXm0M1",
+        "source": "https://data.sfgov.org/resource/rqzj-sfat.json?$select=objectid+as+sf_object_id,address,applicant+as+name,facilitytype+as+type,fooditems+as+menu,latitude,longitude,locationdescription+as+border_streets,permit+as+sf_permit_id,schedule+as+schedule_pdf,status+as+permit_status&$where=status='APPROVED'+OR+status='REQUESTED'"
+      }
+    },
+    "routes": {
+      "vendors": [
+        { "resource": "fooder.resources.VendorRepositoryService", "path": "/vendors" }
+      ]
+    },
+    "util": {
+      "logger": {
+        "file": "/var/log/fooder.log",
+        "filemode": "w+",
+        "format": "[%(levelname)s] %(asctime)s|%(name)s >> %(message)s",
+        "level": "DEBUG"
+      }
+    },
+    "version": "dev"
+  }
+}

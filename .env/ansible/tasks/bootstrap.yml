@@ -1,0 +1,14 @@
+---
+- name: bootstrap.prereqs
+  yum:
+    name: '{{ item }}'
+    state: present
+  with_items:
+    - libselinux-python
+    - unzip
+
+- name: bootstrap.appdir
+  file:
+    src: /vagrant
+    dest: /opt/app
+    state: link

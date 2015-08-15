@@ -1,0 +1,6 @@
+---
+fooder_app_path: /opt/app/src
+fooder_gunicorn_app: clay.wsgi:application
+fooder_gunicorn_bind: 0.0.0.0:8080
+fooder_nginx_server_name: fooder.mway.*
+fooder_static_path: '{{ fooder_app_path }}/public'
